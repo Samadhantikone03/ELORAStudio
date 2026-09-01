@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 33% 93%;
+    --foreground: 25 9% 12%;
+    --card: 36 33% 93%;
+    --card-foreground: 25 9% 12%;
+    --popover: 36 33% 93%;
+    --popover-foreground: 25 9% 12%;
+    --primary: 25 9% 12%;
+    --primary-foreground: 36 33% 93%;
+    --secondary: 35 15% 75%;
+    --secondary-foreground: 25 9% 12%;
+    --muted: 35 20% 82%;
+    --muted-foreground: 30 9% 46%;
+    --accent: 35 20% 82%;
+    --accent-foreground: 25 9% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 36 33% 93%;
+    --border: 35 15% 80%;
+    --input: 35 15% 80%;
+    --ring: 25 9% 12%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F5F0E8;
+    color: #22201D;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #22201D;
+    color: #F5F0E8;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: "Cormorant Garamond", Georgia, serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .perspective-container {
+    perspective: 1200px;
+    perspective-origin: 50% 40%;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .gallery-mask {
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  @media (max-width: 768px) {
+    .gallery-mask {
+      mask-image: linear-gradient(to right, transparent 0%, black 4%, black 90%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 90%, transparent 100%);
+    }
+  }
+}
+
+/* Custom scrollbar for desktop */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F5F0E8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B9AA95;
+    border-radius: 3px;
+  }
+}
